@@ -5,13 +5,11 @@ const jwt = require("jsonwebtoken")
 
 const bodyParser = require("body-parser")
 
-const { ApolloServer, AuthenticationError } = require('apollo-server-express')
+const { ApolloServer } = require('apollo-server-express')
 
 require("dotenv").config()
 
-//import Routers
-//const authRouter = require("./Router/auth")
-//const bankRouter = require("./Router/bank")
+
 const resolvers = require("./Schemas/resolvers")
 const typeDefs = require("./Schemas/typeDefs")
 
