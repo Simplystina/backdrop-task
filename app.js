@@ -57,9 +57,12 @@ app.use(express.json())
 app.options('*', cors()); // preflight OPTIONS; put before other routes
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT,PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Origin', 'https://studio.apollographql.compl');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    //https://studio.apollographql.com
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Credentials', true);
+    res
     next();
 });
 
