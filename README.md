@@ -18,7 +18,7 @@ Both endpoints require authentication with a JSON Web Token (JWT) issued upon su
 * pull the backend branch at backend branch
 * Open the folder on your local computer
 * At the terminal, run npm install to install all packages
-** create a .env file and replace the variables in the .env.example file with the correct variables
+* create a .env file and replace the variables in the .env.example file with the correct variables
 *run npm run start:dev or nodemon to start the server
 This will start the Apollo Server instance on http://localhost:4000/graphql. You can use a tool like GraphQL Playground to explore the API and run queries and mutations.
 
