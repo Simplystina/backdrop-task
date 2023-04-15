@@ -33,6 +33,7 @@ const register = async(args)=>{
 
 const login = async(args)=>{
     
+    let err =''
     try {
           
         //Get user input
@@ -87,6 +88,8 @@ const login = async(args)=>{
        return  data
     } catch (error) {
         console.log(error, "error")
+        throw new Error(err)
+        
     }
 
 }
