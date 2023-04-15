@@ -167,7 +167,12 @@ Example Response
 ```
 The API first checks if the account name provided by the user is available and returns it if found. Otherwise, it makes a call to the Paystack API to retrieve the account name and returns it in sentence case.
 
-Assumptions
+# In 100 words or less, provide an answer to this What's a good reason why  the pure Levenshtein Distance algorithm might be a more effective solution than the broader Damerau–Levenshtein Distance algorithm in this specific scenario written above?
+
+The pure Levenshtein Distance algorithm might be a more effective solution than the Damerau-Levenshtein Distance algorithm in this specific scenario because it is a simpler and faster algorithm that only calculates the number of insertions, deletions, and substitutions required to transform one string into another. In contrast, the Damerau-Levenshtein Distance algorithm also includes transpositions, which means that it allows for additional operations of swapping adjacent characters. In the context of verifying bank account names, transpositions are unlikely to occur frequently and are therefore unnecessary, making the pure Levenshtein Distance algorithm a more efficient and appropriate solution.
+
+
+## Assumptions
 * The Paystack API returns the account name in sentence case.
 * The provided user account name and Paystack account name are compared ignoring case.
 * The Levenshtein Distance algorithm is used to compute the distance between the user account name and the Paystack account name.
