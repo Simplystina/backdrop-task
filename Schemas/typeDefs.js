@@ -28,7 +28,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    getAccountName(user_account_name: String!, user_account_number: String!, user_bank_code: String!): [Bank]
+    getAccountName(user_account_name: String, user_account_number: String!, user_bank_code: String!): [Bank]
   }
 
   type Mutation {

@@ -25,8 +25,9 @@ const server = new ApolloServer({
     playground: true, // enable GraphQL Playground
 
    context: ({req})=>{
-      const authHeader = req.headers.authorization || '';
-    
+         
+      const authHeader = req?.headers?.authorization || '';
+     console.log(authHeader, "headerrr")
       if (typeof  authHeader  ===  'undefined') {
         let user = "A token is required for authentication"
         
@@ -35,13 +36,16 @@ const server = new ApolloServer({
       }
     // Get the token from the authorization header
       const token = authHeader.split(' ')[1] || '';
+      //console.log("token",token)
       try {
         // Verify the token with the secret key
         const user = jwt.verify(token, process.env.JWT_TOKEN);
         
         // Add the authenticated user to the context
+        //console.log(user)
         return { user };
       } catch (error) {
+        console.log(error,"error")
         return 'Invalid token'
       }
    }

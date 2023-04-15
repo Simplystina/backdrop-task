@@ -105,14 +105,17 @@ const verifyAccountname = async(args,context)=>{
     //user_account_number = parseInt(user_account_number)
   try {
       const response = await axios.get(`https://api.paystack.co/bank/resolve?account_number=${user_account_number}&bank_code=${user_bank_code}`, { headers })
-      // console.log(response.data, "responseeeeeeeeeeee")
+      console.log(response.data, "responseeeeeeeeeeee")
        const resp = response.data
-       const distance = levenshteinDistance(user_account_name.toLowerCase(), resp.data.account_name.toLowerCase())
+
+       const useraccountname = await BankModel.find({account_number: user_account_number})
+       console.log(useraccountname)
+       const distance = levenshteinDistance(user_account_name?.toLowerCase() || useraccountname[0]?.account_name.toLowerCase(), resp.data.account_name.toLowerCase())
       
-       //console.log(distance,"distance")
 
        if(distance <= 2){
 
+        console.log(distance,"distance")
           // Set the options for the upsert operation
 
           
@@ -121,7 +124,7 @@ const verifyAccountname = async(args,context)=>{
             { account_number: user_account_number },
             {
                $set: {
-                account_name: user_account_name || resp.data.account_name,
+                account_name: user_account_name || resp.data?.account_name,
                 bank_code : user_bank_code,
                 user_id : context.user.userid
               }
@@ -159,8 +162,8 @@ const verifyAccountname = async(args,context)=>{
 
        
   } catch (error) {
-    //console.log(error.response.data, "error")
-    throw new Error(`${err || error.response.data.message}'}`);
+    console.log(error, "error", err)
+    throw new Error(`${err || error.response?.data?.message}'}`);
     
   }
 }

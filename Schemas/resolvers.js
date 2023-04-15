@@ -7,7 +7,7 @@ const {login, register} = require("../controller/auth")
 const resolver = {
     Query: {
         getAccountName(parent, args, context){
-            console.log(context.user,"context")
+            console.log(context,"context")
             if(!context.user){
                 throw new Error("Valid Authentication needed")
             }
