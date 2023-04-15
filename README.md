@@ -143,6 +143,7 @@ The query returns the following field:
 
 account_name: String!
 Example Request
+
 ```query GetAccountName($userAccountName: String!, $userAccountNumber: String!, $userBankCode: String!) {
   getAccountName(user_account_name: $userAccountName, user_account_number: $userAccountNumber, user_bank_code: $userBankCode) {
     account_name
@@ -151,6 +152,7 @@ Example Request
 ```
 
 Example Response
+
 ```{
   "data": {
     "getAccountName": [
