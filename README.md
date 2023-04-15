@@ -98,7 +98,8 @@ Example Response
       "username": "chidinma"
     }
   }
-}```
+}
+```
 
 ## Add Bank Account Mutation
 The AddUSerBankDetails mutation allows users to add a bank account to their account on Backdrop. The mutation takes three arguments:
@@ -106,6 +107,7 @@ The AddUSerBankDetails mutation allows users to add a bank account to their acco
 * user_account_number: The account number of the bank account (required)
 * user_bank_code: The bank code of the bank where the account is held (required)
 * user_account_name: The name associated with the bank account (required)
+
 Example Request:
 ```mutation AddUserBankDetails($userAccountName: String!, $userAccountNumber: String!, $userBankCode: String!) {
   addUserBankDetails(user_account_name: $userAccountName, user_account_number: $userAccountNumber, user_bank_code: $userBankCode) {
