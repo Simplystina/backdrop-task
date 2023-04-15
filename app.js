@@ -21,6 +21,7 @@ const server = new ApolloServer({
     typeDefs,
   
     resolvers,
+    introspection: true, // enable introspection
 
    context: ({req})=>{
       const authHeader = req.headers.authorization || '';
