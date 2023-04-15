@@ -22,6 +22,7 @@ const server = new ApolloServer({
   
     resolvers,
     introspection: true, // enable introspection
+    playground: true, // enable GraphQL Playground
 
    context: ({req})=>{
       const authHeader = req.headers.authorization || '';
