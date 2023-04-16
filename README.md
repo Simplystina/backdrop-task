@@ -18,20 +18,14 @@ Both endpoints require authentication with a JSON Web Token (JWT) issued upon su
 * pull the backend branch at backend branch
 * Open the folder on your local computer
 * At the terminal, run npm install to install all packages
-** create a .env file and replace the variables in the .env.example file with the correct variables
-*run npm run start:dev or nodemon to start the server
-This will start the Apollo Server instance on http://localhost:4000/graphql. You can use a tool like GraphQL Playground to explore the API and run queries and mutations.
+* create a .env file and replace the variables in the .env.example file with the correct variables
+* run npm run start:dev or nodemon to start the server
+* This will start the Apollo Server instance on http://localhost:4000/graphql. You can use a tool like GraphQL Playground to explore the API and run queries and mutations.
 
 ## LIVE URL
 The api url was deployed using render and the live link is [https://bank-verify.onrender.com/graphql](https://bank-verify.onrender.com/graphql) Use the apollo playground at https://studio.apollographql.com/sandbox/explorer to run queries and test the API 
 
 
-## Signup Mutation
-The signup mutation allows users to create a new account with Backdrop. The mutation takes three arguments:
-
-* username: The name of the user (required)
-* email: The email address of the user (required)
-* password: The password for the user account (required)
 
 ## GraphQL Mutation
 
